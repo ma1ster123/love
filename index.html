@@ -119,7 +119,7 @@ h1 {
     <div class="slide"></div>
 </div>
 
-<audio autoplay loop>
+<audio id="bgMusic" loop>
     <source src="music/music.mp3" type="audio/mpeg">
 </audio>
 
@@ -137,6 +137,11 @@ function createHeart() {
 }
 
 setInterval(createHeart, 400);
+
+const music = document.getElementById('bgMusic');
+document.body.addEventListener('click', () => {
+    music.play();
+}, { once: true });
 </script>
 
 </body>
